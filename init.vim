@@ -55,6 +55,10 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 "****************************
 "***********IDE**************
 
+"" Resaltar sintaxis de diferentes lenguajeResaltar sintaxis de diferentes lenguajes
+Plug 'sheerun/vim-polyglot'
+
+
 
 " colocar el puntero en una palabra o lugar especifico
 Plug 'easymotion/vim-easymotion'
@@ -85,9 +89,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 ""
 Plug 'vim-scripts/CSApprox'
-"" Este complemento proporciona el cierre automático de paréntesis, corchetes, etc. 
-Plug 'Raimondi/delimitMate'
-
 "" Proporciona una manera fácil de explorar las etiquetas del archivo actual y obtenga una descripción general de su estructura.
 Plug 'majutsushi/tagbar'
 "" Es un complemento que proporciona linting (verificación de sintaxis y errores semánticos) 
@@ -113,20 +114,42 @@ endif
  
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
+"" TYPING
+"" Este complemento proporciona el cierre automático de paréntesis, corchetes, etc. 
+Plug 'Raimondi/delimitMate'
+""siera las llaves de html automáticamente  <h1> </h1>
+Plug 'alvan/vim-closetag'
 
+""Surround.vim tiene que ver con alrededores: paréntesis, corchetes, comillas, Etiquetas XML y más. El complemento proporciona asignaciones para eliminar fácilmente, cambiar y agregar ese entorno de dos en dos. 
+Plug 'tpope/vim-surround'
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
-"" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
 ""Prettier
 ""auto identado del texto
 "" post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+""Multiples Cursores
+Plug 'terryma/vim-multiple-cursors'
+
+" # Mapping
+" If you don't like the plugin taking over your key bindings, you can turn it off and reassign them the way you want:
+
+" let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+" let g:multi_cursor_start_word_key      = '<C-n>'
+" let g:multi_cursor_select_all_word_key = '<A-n>'
+" let g:multi_cursor_start_key           = 'g<C-n>'
+" let g:multi_cursor_select_all_key      = 'g<A-n>'
+" let g:multi_cursor_next_key            = '<C-n>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<Esc>'
+
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -155,6 +178,11 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 "" COC
 "" AUTOCOMPLETADO
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+
 "*****************************************************************************
 "*****************************************************************************
 
@@ -478,6 +506,7 @@ set autoread
 "" General
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+:imap ii <Esc>
 
 " Easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
