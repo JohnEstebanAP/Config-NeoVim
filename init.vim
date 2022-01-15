@@ -41,8 +41,8 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "
 " Themes
-Plug 'dracula/vim', { 'as': 'dracula' }
-
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 "****************************
 "****************************
 "*::::**:::****::::::********
@@ -257,10 +257,9 @@ set showcmd
 set showmatch
 set ruler
 let no_buffers_menu=1
-colorscheme dracula
-
-
-" Better command line completion 
+"colorscheme dracula
+colorscheme nord 
+"command line completion 
 set wildmenu
 
 " mouse support
@@ -334,7 +333,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'luna'
+let g:airline_theme = 'nord' " theme= 'luna'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
