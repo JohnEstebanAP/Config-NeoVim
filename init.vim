@@ -1,5 +1,4 @@
-" vim-bootstrap 2022-01-02 23:53:14
-
+"2022-01-02 23:53:14
 "*****************************************************************************
 "" Vim-Plug core
 "*****************************************************************************
@@ -58,7 +57,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 "" Resaltar sintaxis de diferentes lenguajeResaltar sintaxis de diferentes lenguajes
 Plug 'sheerun/vim-polyglot'
 
-
+"colore los colores del texto  en formato rgb ect.
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " colocar el puntero en una palabra o lugar especifico
 Plug 'easymotion/vim-easymotion'
@@ -747,3 +747,38 @@ set splitright
 vnoremap <Leader>t :split<CR>:terminal<CR>:resize 10<CR> i
 nnoremap <Leader>t :split<CR>:terminal<CR>:resize 10<CR> i fish<CR>
 tnoremap <C-t> exit<CR>exit<CR> 
+
+
+"CONFIGURACION DEL COLORIZANTE hexokinase
+let g:Hexokinase_highlighters = ['virtual']
+"let g:Hexokinase_highlighters = ['sign_column']
+"let g:Hexokinase_highlighters = ['foreground']
+"let g:Hexokinase_highlighters = ['foregroundfull']
+"let g:Hexokinase_highlighters = ['background']
+"let g:Hexokinase_highlighters = ['backgroundfull']
+" Patterns to match for all filetypes
+" Can be a comma separated string or a list of strings
+
+""activa para que se vean los colores en la terminal Nota: Todoslos colores pasan aversen mas oscuros
+set termguicolors
+" Default value:
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+
+" All possible values
+let g:Hexokinase_optInPatterns = [
+\     'full_hex',
+\     'triple_hex',
+\     'rgb',
+\     'rgba',
+\     'hsl',
+\     'hsla',
+\     'colour_names'
+\ ]
+
+" Filetype specific patterns to match
+" entry value must be comma seperated list
+let g:Hexokinase_ftOptInPatterns = {
+\     'css': 'full_hex,rgb,rgba,hsl,hsla,colour_names',
+\     'html': 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+\ }
+
